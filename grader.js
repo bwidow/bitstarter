@@ -90,7 +90,7 @@ if(require.main == module) {
     program
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-        .option('-u, --url <html_file>', 'url to index.html')
+        .option('-u, --url <url>', 'url to index.html')
         .parse(process.argv);
     if(program.url) {
 	rest.get(program.url).on('complete',function(result) {

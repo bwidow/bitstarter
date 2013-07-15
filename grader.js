@@ -94,7 +94,7 @@ if(require.main == module) {
         .parse(process.argv);
     if(program.url) {
 	rest.get(program.url).on('complete',function(result) {
-	    var checkJson = checkHtmlFile(result, program.check);
+	    var checkJson = checkHtmlUrl(result, program.check);
 	    var outJson = JSON.stringify(checkJson, null, 4);
 	    console.log(outJson);
 	});
